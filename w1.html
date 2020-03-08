@@ -1,38 +1,5 @@
-<html>
+#!/usr/bin/python3
 
-<head>
+print("content-type:text/html; charset=UTF-8\n")
 
-  <script type="text/javascript"
-
-src="https://cdn.rawgit.com/brython-dev/brython/3.5.1/www/src/brython.js">
-
-</script>
-  <script type="text/javascript"
-
-src="https://cdn.rawgit.com/brython-dev/brython/3.5.1/www/src/brython_stdlib.js">
-
-</script>
-  
-<scripttype="text/javascript"src="/path/to/brython.js"></script>
-
-</head>
-
-<bodyonload="brython()">
-
-<scripttype="text/python">
-
-from browser import document, alert
-
-def echo(event):
-
-alert(document["zone"].value)
-
-document["mybutton"].bind("click", echo)
-
-</script>
-
-<inputid="zone"><buttonid="mybutton">click !</button>
-
-</body>
-
-</html>
+print("Hello world")
