@@ -2,6 +2,10 @@ import time
 from datetime import datetime
 from random import randint
 from winsound import Beep
+import sys
+input=sys.argv[1]
+print(input)
+
 
 now = datetime.now()
 print ("%s시 %s분" %(now.hour, now.minute))
