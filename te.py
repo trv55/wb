@@ -1,18 +1,25 @@
-from flask import Flask, render_template
+#!/usr/bin/env python
+#-*- coding: euc-kr -*-
 
-app = Flask(__name__)
+import cgi
+import cgitb    #스크립트 오류 등의 에러발생시 브라우저에 에러 내용을 보여준다.
+cgitb.enable()
 
-@app.route('/')
-def index():
-       # render your html template
-       return render_template('w1.html')
+print("Content-type: text/html\n")    #\n 을 안하면 Internal Server Error 발생!
 
-@app.route('/something')
-def do_something():
-       # when the button was clicked, 
-       # the code below will be execute.
-       print 'do something here'
+print('<html>')
+print('<head>')
+print('<title>Hello Word - First CGI Program</title>')
+print('</head>')
+print('<body>')
+
+form = cgi.FieldStorage()
+
+if "email" not in form:
+    print("Error!")
+else:
+    print("Your email address is " + form["email"].value)
 
 
-if __name__ == '__main__':
-       app.run()
+print('</body>')
+print('</html>')
